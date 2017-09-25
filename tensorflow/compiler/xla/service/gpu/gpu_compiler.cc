@@ -342,7 +342,7 @@ StatusOr<std::unique_ptr<Executable>> GpuCompiler::Compile(
     XLA_VLOG_LINES(2, ir_module_string_before_opt);
   }
 
-  LOG(INFO) << llvm_ir::DumpModuleToString(*llvm_module);
+  LOG(INFO) << llvm_ir::DumpModuleToString(llvm_module);
 
   // Reserve space for the PTX to be generated for this module.
   string* ptx;
