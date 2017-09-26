@@ -291,7 +291,7 @@ StatusOr<std::unique_ptr<Executable>> GpuCompiler::Compile(
   llvm_module.setTargetTriple(kTargetTriple);
   llvm_module.setDataLayout(kDataLayout);
 
-  VLOG(1) << "IR BEGIN (adichopra1) " << llvm_ir::DumpModuleToString(llvm_module) << " IR END (adichopra1)";
+  LOG(INFO) << "IR BEGIN (adichopra1) " << llvm_ir::DumpModuleToString(llvm_module) << " IR END (adichopra1)";
 
 
   // Determine the HLO schedule, which is an ordering of HLO instructions.  This
