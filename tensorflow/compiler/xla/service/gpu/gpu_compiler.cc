@@ -291,7 +291,7 @@ StatusOr<std::unique_ptr<Executable>> GpuCompiler::Compile(
   llvm_module.setTargetTriple(kTargetTriple);
   llvm_module.setDataLayout(kDataLayout);
 
-  LOG(INFO) << "IR BEGIN (adichopra1) " << llvm_ir::DumpModuleToString(llvm_module) << " IR END (adichopra1)";
+  VLOG(1) << "IR BEGIN (adichopra1) " << llvm_ir::DumpModuleToString(llvm_module) << " IR END (adichopra1)";
 
 
   // Determine the HLO schedule, which is an ordering of HLO instructions.  This
@@ -345,7 +345,7 @@ StatusOr<std::unique_ptr<Executable>> GpuCompiler::Compile(
     XLA_VLOG_LINES(2, ir_module_string_before_opt);
   }
 
-  LOG(INFO) << "IR BEGIN (adichopra) " << llvm_ir::DumpModuleToString(llvm_module) << " IR END (adichopra)";
+  VLOG(1) << "IR BEGIN (adichopra) " << llvm_ir::DumpModuleToString(llvm_module) << " IR END (adichopra)";
 
   // Reserve space for the PTX to be generated for this module.
   string* ptx;
