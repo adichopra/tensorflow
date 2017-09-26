@@ -24,12 +24,15 @@ from __future__ import print_function
 
 import argparse
 import sys
+import os
 
 from tensorflow.examples.tutorials.mnist import input_data
 
 import tensorflow as tf
 
 FLAGS = None
+
+os.environ['TF_CPP_MIN_VLOG_LEVEL']='3'
 
 
 def main(_):
