@@ -345,7 +345,7 @@ StatusOr<std::unique_ptr<Executable>> GpuCompiler::Compile(
     XLA_VLOG_LINES(2, ir_module_string_before_opt);
   }
 
-  VLOG(1) << "IR BEGIN (adichopra) " << llvm_ir::DumpModuleToString(llvm_module) << " IR END (adichopra)";
+  LOG(INFO) << "IR BEGIN (adichopra2) " << llvm_ir::DumpModuleToString(llvm_module) << " IR END (adichopra2)";
 
   // Reserve space for the PTX to be generated for this module.
   string* ptx;
@@ -379,6 +379,9 @@ StatusOr<std::unique_ptr<Executable>> GpuCompiler::Compile(
   if (VLOG_IS_ON(2)) {
     DumpPtxasInfo(*ptx);
   }
+
+  LOG(INFO) << "IR BEGIN (adichopra3) " << llvm_ir::DumpModuleToString(llvm_module) << " IR END (adichopra3)";
+
 
   auto thunk_schedule = MakeUnique<ThunkSchedule>(
       ir_emitter.ConsumeThunkSequence(), std::move(stream_assignment),
