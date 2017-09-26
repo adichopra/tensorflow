@@ -21,7 +21,6 @@ from __future__ import print_function
 
 import argparse
 import sys
-import os
 
 import tensorflow as tf
 
@@ -30,7 +29,6 @@ from tensorflow.python.client import timeline
 
 FLAGS = None
 
-os.environ['TF_CPP_MIN_VLOG_LEVEL']='3'
 
 def main(_):
   # Import data
