@@ -186,6 +186,12 @@ config_setting(
 )
 
 config_setting(
+    name = "with_s3_support",
+    values = {"define": "with_s3_support=true"},
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
     name = "with_xla_support",
     values = {"define": "with_xla_support=true"},
     visibility = ["//visibility:public"],
@@ -378,6 +384,11 @@ filegroup(
         "//tensorflow/contrib/integrate:all_files",
         "//tensorflow/contrib/keras:all_files",
         "//tensorflow/contrib/kernel_methods:all_files",
+        "//tensorflow/contrib/kfac:all_files",
+        "//tensorflow/contrib/kfac/examples:all_files",
+        "//tensorflow/contrib/kfac/examples/tests:all_files",
+        "//tensorflow/contrib/kfac/python/kernel_tests:all_files",
+        "//tensorflow/contrib/kfac/python/ops:all_files",
         "//tensorflow/contrib/labeled_tensor:all_files",
         "//tensorflow/contrib/layers:all_files",
         "//tensorflow/contrib/layers/kernels:all_files",
@@ -389,16 +400,19 @@ filegroup(
         "//tensorflow/contrib/losses:all_files",
         "//tensorflow/contrib/meta_graph_transform:all_files",
         "//tensorflow/contrib/metrics:all_files",
+        "//tensorflow/contrib/mpi_collectives:all_files",
         "//tensorflow/contrib/ndlstm:all_files",
         "//tensorflow/contrib/nearest_neighbor:all_files",
         "//tensorflow/contrib/nn:all_files",
         "//tensorflow/contrib/opt:all_files",
         "//tensorflow/contrib/predictor:all_files",
+        "//tensorflow/contrib/quantize:all_files",
         "//tensorflow/contrib/receptive_field:all_files",
         "//tensorflow/contrib/reduce_slice_ops:all_files",
         "//tensorflow/contrib/remote_fused_graph/pylib:all_files",
         "//tensorflow/contrib/resampler:all_files",
         "//tensorflow/contrib/rnn:all_files",
+        "//tensorflow/contrib/s3:all_files",
         "//tensorflow/contrib/saved_model:all_files",
         "//tensorflow/contrib/saved_model/cc/saved_model:all_files",
         "//tensorflow/contrib/seq2seq:all_files",
