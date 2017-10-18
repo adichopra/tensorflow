@@ -557,7 +557,7 @@ def tf_workspace(path_prefix="", tf_repo_name=""):
           "https://github.com/riscv/riscv-llvm/archive/hwachav4.tar.gz",
       ],
       sha256 = "3b7e254c07b4bd33da2c8a0af84a939a2734a601c964d9b93cdb1baf5fdfe91a",
-      strip_prefix = "llvm-hwachav4",
+      strip_prefix = "riscv-llvm-hwachav4",
       build_file = str(Label("//third_party/llvm:llvm.BUILD")),
       repository = tf_repo_name,
   )
